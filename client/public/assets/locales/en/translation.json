@@ -1,0 +1,8 @@
+{
+  "app_title": "Title",
+  "language": "Language",
+  "welcome_message": "Welcome",
+  "days_since_release": "it's been {{number_of_days}} days since this app was released",
+  "goodbye_message":"Good Bye"
+
+}
