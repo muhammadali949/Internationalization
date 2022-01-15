@@ -1,0 +1,23 @@
+.nav-item-list {
+  overflow: auto;
+}
+
+.router-outlet {
+  margin-top: 64px;
+  height: calc(100vh - 64px);
+  width: 100%;
+  overflow: auto;
+}
+
+.MuiList-root {
+  overflow: auto;
+}
+
+.MuiToolbar-gutters {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.MuiDrawer-paper {
+  top: unset !important;
+}

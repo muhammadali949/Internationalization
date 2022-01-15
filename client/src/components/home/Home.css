@@ -1,0 +1,10 @@
+.inner-container {
+  background: rgba(0, 167, 255, 0.7);
+  height: 100%;
+}
+
+.main-container {
+  background: url('../../../public/home.jpg');
+  height: 100%;
+  background-size: cover;
+}

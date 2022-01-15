@@ -10,6 +10,8 @@ import 'bootstrap/dist/js/bootstrap.js'
 import 'bootstrap/dist/css/bootstrap.min.css'
 // import 'flag-icon-css/css/flag-icon.min.css'
 import reportWebVitals from './reportWebVitals';
+import { Provider } from "react-redux";
+import store from "./store";
 
 
 i18next
@@ -38,7 +40,9 @@ const loadingMarkup = (
 ReactDOM.render(
   <Suspense fallback={loadingMarkup}>
     <React.StrictMode>
-      <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </React.StrictMode>
   </Suspense>,
   document.getElementById('root')

@@ -1,7 +1,8 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Grid } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import axios from 'axios';
 
 const useStyles = makeStyles({
   gridContainer: {
@@ -14,6 +15,19 @@ const useStyles = makeStyles({
 function Supplier() {
   const navigate = useNavigate();
   const classes = useStyles();
+  const [data, setData] = useState([]);
+  let { id } = useParams();
+  console.log(id);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:3000/suppliers/${id}`)
+      .then((res) => setData(res.data));
+    return () => {
+      axios
+        .get(`http://localhost:3000/suppliers/${id}`)
+        .then((res) => console.log(res.data));
+    };
+  }, []);
 
   const Goback = () => {
     navigate(-1);
@@ -40,25 +54,25 @@ function Supplier() {
               width: '400px',
               height: '300px',
             }}
-            src="https://images.unsplash.com/photo-1641327955771-3cc0c158b3a4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80"
+            src={data.profileDescriptonId}
             alt=""
           />
         </Grid>
         <Grid item xs={12} sm={6} md={6}>
           <h1>Demo Supplier one</h1>
 
-          <p>Desc En</p>
+          <p>{data.companyName}</p>
           <div style={{ display: 'flex' }}>
             <label style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>
               Sales Manager Name:
             </label>
-            <p> Demo One Sales Manager Name</p>
+            <p> {data.salesManagerName}</p>
           </div>
           <div style={{ display: 'flex', alignItems: 'inline' }}>
             <label style={{ fontWeight: 'bold', fontSize: '1.1rem' }}>
               Sales Manager Mobile:
             </label>
-            <p>000000</p>
+            <p>{data.salesManagerMobile}</p>
           </div>
           <button onClick={Goback}>Go Back</button>
         </Grid>
