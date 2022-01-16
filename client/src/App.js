@@ -32,8 +32,12 @@ const languages = [
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#00A7ff'
+      main: '#4632d8',
     },
+    secondary: {
+      main: '#ff00c9',
+    },
+    
     typography: {
       fontFamily: 'Myriad Arabic',
       fontWeightLight: 400,

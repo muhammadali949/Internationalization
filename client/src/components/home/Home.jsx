@@ -6,15 +6,38 @@ import cookies from 'js-cookie';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { language } from '../../actions/language/language';
-import './Home.css';
+import './Home.scss';
+import { Button } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 
 function Home({ language, lang }) {
   const { t } = useTranslation();
 
+  const navigate = useNavigate();
+  const handleSubmit = () => {
+    navigate('/register')
+  }
+
   return (
     <>
-      <div class="main-container">
-        <div class="inner-container"></div>
+      <div class="home-main-container">
+        <div class="inner-container">
+          <div class="content">
+            <h1><b>
+            Shop Now,
+            Pay Later</b>
+            </h1>
+            <h3>Pay over time for your purchase. No interest, no cost and no catch. Really.
+            </h3>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={handleSubmit}
+            >
+              Register now
+            </Button>
+          </div>
+        </div>
       </div>
     </>
     // <div style={{ padding: '10px' }}>

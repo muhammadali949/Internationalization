@@ -1,0 +1,19 @@
+.home-main-container {
+  background: url('../../../public/home.jpg');
+  height: 100%;
+  background-size: cover;
+  .inner-container {
+    background: rgba(156, 39, 176, .65);
+    height: 100%;
+    .content {
+      margin: auto;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      place-content: center;
+      text-align: center;
+    }
+  }
+}

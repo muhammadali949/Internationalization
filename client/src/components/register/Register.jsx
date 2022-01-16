@@ -100,22 +100,7 @@ function Register({ auth: auth, lang }) {
         .catch((err) => console.log(err));
     };
   }, []);
-  // const HandleSubmit = (e) => {
-  //   e.preventDefault();
-  //   console.log({
-  //     crNumber,
-  //     companyName,
-  //     contactPersonName,
-  //     contactPersonMobile,
-  //     contactPersonEmail,
-  //     loginId,
-  //     cityId,
-  //     sectorId,
-  //     password,
-  //     confirmPassword,
-  //   });
-  // };
-  console.log(lang);
+  
   const body = JSON.stringify({
     isArabicLang: lang,
     isValidTrans: true,
@@ -185,119 +170,7 @@ function Register({ auth: auth, lang }) {
   };
 
   return (
-    // <div
-    //   style={{
-    //     marginTop: '6%',
-    //     width: '80%',
-    //     marginLeft: auto,
-    //     marginRight: auto,
-    //   }}
-    // >
-    //   <form
-    //     className={classes.root}
-    //     noValidate
-    //     autoComplete="off"
-    //     style={{
-    //       display: 'flex',
-    //       flexDirection: 'column',
-    //       width: '50%',
-    //       marginLeft: auto,
-    //       marginRight: auto,
-    //     }}
-    //   >
-    //     <h2>{t('Register')}</h2>
-    //     <TextField
-    //       id="standard-basic"
-    //       label={t('CR_Number')}
-    //       onChange={(e) => setCrNumber(e.target.value)}
-    //       value={crNumber}
-    //     />
-    //     <TextField
-    //       id="standard-basic"
-    //       label={t('Company_Name')}
-    //       onChange={(e) => setCompanyName(e.target.value)}
-    //       value={companyName}
-    //     />
-    //     <TextField
-    //       id="standard-basic"
-    //       label={t('Contact_Person_Name')}
-    //       onChange={(e) => setContactPersonName(e.target.value)}
-    //       value={contactPersonName}
-    //     />
-    //     <TextField
-    //       id="standard-basic"
-    //       label={t('Contact_Person_Mobile')}
-    //       onChange={(e) => setContactPersonMobile(e.target.value)}
-    //       value={contactPersonMobile}
-    //     />
-    //     <TextField
-    //       id="standard-basic"
-    //       label={t('Contact_Person_Email')}
-    //       onChange={(e) => setContactPersonEmail(e.target.value)}
-    //       value={contactPersonEmail}
-    //     />
-
-    //     <TypeSelect
-    //       state={cityId}
-    //       setState={setCityId}
-    //       data={city}
-    //       label={t('SELECT_CITY')}
-    //     />
-    //     <SelectSector
-    //       state={sectorId}
-    //       setState={setSectorId}
-    //       data={sectors}
-    //       label={t('SELECT_SECTOR')}
-    //     />
-    //     <TextField
-    //       id="standard-basic"
-    //       type="text"
-    //       label={t('Login_Id')}
-    //       onChange={(e) => setLoginId(e.target.value)}
-    //       value={loginId}
-    //     />
-    //     <TextField
-    //       id="standard-basic"
-    //       type="password"
-    //       label={t('Password')}
-    //       onChange={(e) => setPassword(e.target.value)}
-    //       value={password}
-    //     />
-    //     <TextField
-    //       id="standard-basic"
-    //       type="password"
-    //       label={t('Confirm_Password')}
-    //       onChange={(e) => setConfirmPassword(e.target.value)}
-    //       value={confirmPassword}
-    //     />
-    //     {responseServer && responseServer.registrationId === 0 ? (
-    //       <Alert severity="error">{responseServer.responseMessage}</Alert>
-    //     ) : (
-    //       ''
-    //     )}
-    //     <button onClick={HandleSubmit}>Submit</button>
-    //     {responseServer !== '' && responseServer.registrationId !== 0 ? (
-    //       <>
-    //         <div style={{ display: 'flex' }}>
-    //           <p>{t('Time_message')}</p>
-    //           <Timer props={1} />
-    //         </div>
-    //         <TextField
-    //           id="standard-basic"
-    //           type="number"
-    //           label={t('OTP_Code')}
-    //           onChange={(e) => setOtpCode(e.target.value)}
-    //           value={otpCode}
-    //         />
-    //         <button onClick={HandleOtp}>Send</button>
-    //         <p>{t('sorry_timeout')}</p>
-    //         <p>Resend OTP?</p>
-    //       </>
-    //     ) : (
-    //       ''
-    //     )}
-    //   </form>
-    // </div>
+    
     <div className="main-container">
       <Card className={classes.root}>
         <Container component="main" maxWidth="xs">
